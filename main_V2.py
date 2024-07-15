@@ -44,9 +44,12 @@ with tab1:
     st.write('月の返済は', '%.2f' % monthly_payment, '万円')
     st.write('初回手数料は', '%.2f' % initial_fee, '万円')
     st.write('返済総額は', '%.1f' % total_repayment, '万円')
+    st.markdown('<hr style="border:1px solid #007bff">', unsafe_allow_html=True)
+    
     st.write('金利＋手数料の負担は', '%.1f' % self_repayment, '万円')
     st.write('住宅ローン控除総額は', '%.1f' % total_deduction, '万円')
     st.write('実質負担総額は', '%.1f' % total_self_repayment, '万円')
+    st.markdown('<hr style="border:1px solid #007bff">', unsafe_allow_html=True)
 
     tab1_1, tab1_2 = st.tabs(["年ごとのグラフ", "月ごとの支払い表"])
     
@@ -74,14 +77,16 @@ with tab2:
 
     # 実質負担総額
     total_self_repayment_p = self_repayment - total_deduction_p
-
     
     st.write('月の返済は', '%.2f' % monthly_payment, '万円')
     st.write('初回手数料は', '%.2f' % initial_fee, '万円')
     st.write('返済総額は', '%.1f' % total_repayment, '万円')
+    st.markdown('<hr style="border:1px solid #007bff">', unsafe_allow_html=True)
+
     st.write('金利＋手数料の負担は', '%.1f' % self_repayment, '万円')
     st.write('住宅ローン控除総額は', '%.1f' % total_deduction_p, '万円')
     st.write('実質負担総額は', '%.1f' % total_self_repayment_p, '万円')
+    st.markdown('<hr style="border:1px solid #007bff">', unsafe_allow_html=True)
 
     tab2_1, tab2_2 = st.tabs(["年ごとのグラフ", "月ごとの支払い表"])
     
