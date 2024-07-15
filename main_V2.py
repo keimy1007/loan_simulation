@@ -5,19 +5,19 @@ import numpy as np
 import pandas as pd
 import calculator
 
-st.title('ローン返済シミュレータ')
+st.title('Simulating Loan Repayment')
 
 @st.cache_data
 def convert_df(df):
     return df.to_csv(index=False).encode('utf-8')
 
 # 必要情報(サイドバー)
-debt = st.sidebar.slider('借入金(万円)', min_value=100, max_value=15000, step=100)
+debt = st.sidebar.slider('借入金(万円)', min_value=100, max_value=15000, step=100, value=11000)
 year = 35  # 固定の返済期間
-actual_year = st.sidebar.slider('返済期間(年)', min_value=1, max_value=35, step=1)
-rate = st.sidebar.slider('年利(%)', min_value=0.01, max_value=3.00, step=0.01)
-deduction_year = st.sidebar.slider('住宅ローン控除期間(年)', min_value=5, max_value=13, step=1)
-deduction_limit = st.sidebar.slider('住宅ローン控除限度額(万円)', min_value=3000, max_value=5000, step=500)
+actual_year = st.sidebar.slider('返済期間(年)', min_value=1, max_value=35, step=1, value=10)
+rate = st.sidebar.slider('年利(%)', min_value=0.01, max_value=3.00, step=0.01, value=0.38)
+deduction_year = st.sidebar.slider('住宅ローン控除期間(年)', min_value=5, max_value=13, step=1, value=13)
+deduction_limit = st.sidebar.slider('住宅ローン控除限度額(万円)', min_value=3000, max_value=5000, step=500, value=4500)
 
 # 初回手数料の計算
 initial_fee = debt * (0.022) + 200
