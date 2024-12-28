@@ -1,4 +1,5 @@
 # ローンシミュレータ
+# streamlit run main_V2.py
 
 import streamlit as st
 import numpy as np
